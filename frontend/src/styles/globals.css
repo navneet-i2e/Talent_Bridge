@@ -1,0 +1,313 @@
+@import url("https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800&f[]=satoshi@300,400,500,700&display=swap");
+
+:root {
+  --navy-950: #050d1a;
+  --navy-900: #0a1628;
+  --navy-800: #0f2040;
+  --navy-700: #163058;
+  --navy-600: #1e4080;
+  --navy-500: #2655a8;
+  --blue-400: #3b82f6;
+  --blue-300: #60a5fa;
+  --gold-500: #c9a84c;
+  --gold-400: #d4b86a;
+  --gold-300: #e0cc96;
+  --slate-900: #0f172a;
+  --slate-800: #1e293b;
+  --slate-700: #334155;
+  --slate-600: #475569;
+  --slate-500: #64748b;
+  --slate-400: #94a3b8;
+  --slate-300: #cbd5e1;
+  --slate-200: #e2e8f0;
+  --slate-100: #f1f5f9;
+  --slate-50: #f8fafc;
+  --white: #ffffff;
+
+  --bg-primary: var(--white);
+  --bg-secondary: var(--slate-50);
+  --text-primary: var(--navy-900);
+  --text-secondary: var(--slate-600);
+  --text-muted: var(--slate-400);
+  --border-color: var(--slate-200);
+  --border-strong: var(--slate-300);
+  --accent-light: #e8f0ff;
+
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  --font-display: "Cabinet Grotesk", system-ui, sans-serif;
+  --font-body: "Satoshi", system-ui, sans-serif;
+
+  --sidebar-width: 240px;
+  --sidebar-collapsed-width: 68px;
+  --topbar-height: 64px;
+  --bottom-nav-height: 60px;
+
+  --shadow-xs: 0 1px 2px rgba(5, 13, 26, 0.04);
+  --shadow-sm: 0 1px 4px rgba(5, 13, 26, 0.06), 0 1px 2px rgba(5, 13, 26, 0.04);
+  --shadow-md:
+    0 4px 12px rgba(5, 13, 26, 0.08), 0 2px 4px rgba(5, 13, 26, 0.04);
+  --shadow-lg:
+    0 12px 32px rgba(5, 13, 26, 0.12), 0 4px 8px rgba(5, 13, 26, 0.06);
+  --shadow-xl:
+    0 24px 48px rgba(5, 13, 26, 0.16), 0 8px 16px rgba(5, 13, 26, 0.08);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  line-height: 1.6;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+ul {
+  list-style: none;
+}
+
+/* Touch-friendly minimum sizes */
+button,
+a[role="button"] {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--slate-200);
+  border-radius: 999px;
+}
+
+/* Skeleton */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--slate-100) 25%,
+    var(--slate-50) 50%,
+    var(--slate-100) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite linear;
+  border-radius: var(--radius-md);
+}
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Prose */
+.prose {
+  font-size: 0.875rem;
+  line-height: 1.75;
+}
+.prose h1,
+.prose h2,
+.prose h3 {
+  margin: 1em 0 0.5em;
+  font-family: var(--font-display);
+}
+.prose h1 {
+  font-size: 1.2rem;
+}
+.prose h2 {
+  font-size: 1.05rem;
+}
+.prose h3 {
+  font-size: 0.95rem;
+}
+.prose p {
+  margin-bottom: 0.75em;
+}
+.prose p:last-child {
+  margin-bottom: 0;
+}
+.prose ul,
+.prose ol {
+  padding-left: 1.25em;
+  margin-bottom: 0.75em;
+}
+.prose li {
+  margin-bottom: 0.3em;
+}
+.prose code {
+  background: var(--slate-100);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.82em;
+  font-family: monospace;
+}
+.prose pre {
+  background: var(--navy-900);
+  color: var(--slate-200);
+  padding: 14px;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin-bottom: 0.75em;
+  font-size: 0.82em;
+}
+.prose strong {
+  font-weight: 600;
+  color: var(--navy-800);
+}
+.prose blockquote {
+  border-left: 3px solid var(--gold-400);
+  padding-left: 1em;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 1em 0;
+}
+.prose a {
+  color: var(--navy-600);
+  text-decoration: underline;
+}
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 1em 0;
+}
+
+/* Focus */
+:focus-visible {
+  outline: 2px solid var(--navy-500);
+  outline-offset: 2px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Responsive helpers */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+@media (min-width: 769px) {
+  .show-mobile-only {
+    display: none !important;
+  }
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1a2540;
+  --text-primary: #e8edf5;
+  --text-secondary: #94a3b8;
+  --text-muted: #4a5568;
+  --border-color: #1e2d45;
+  --border-strong: #2d3f5c;
+  --accent-light: #162035;
+  --white: #111827;
+  --slate-50: #1a2540;
+  --slate-100: #1e2d45;
+  --slate-200: #2a3a54;
+  --slate-300: #3a4f6e;
+  --slate-400: #4a6080;
+
+  --navy-900: #050d1a;
+  --navy-800: #0a1628;
+  --navy-700: #0f2040;
+
+  color-scheme: dark;
+}
+
+[data-theme="dark"] body {
+  background: #0d1525;
+}
+
+/* Smooth transitions on theme switch */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+/* Dark mode scrollbar */
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--slate-200);
+}
+
+/* Dark mode inputs */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* Dark mode cards */
+[data-theme="dark"] .card,
+[data-theme="dark"] [class*="card"] {
+  background: var(--bg-secondary);
+}

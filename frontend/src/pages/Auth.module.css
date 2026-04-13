@@ -1,0 +1,155 @@
+.page { display: flex; min-height: 100dvh; }
+
+.leftPanel {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding: 32px 20px; background: var(--white);
+}
+.card { width: 100%; max-width: 420px; }
+
+.rightPanel {
+  width: 440px; background: var(--navy-950);
+  display: flex; align-items: center; justify-content: center;
+  padding: 60px 48px; position: relative; overflow: hidden;
+}
+@media (max-width: 900px) { .rightPanel { display: none; } }
+
+/* Brand */
+.brand { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
+.brandIcon {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--navy-600), var(--navy-800));
+  color: var(--gold-300); display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.78rem; letter-spacing: 0.05em;
+}
+.brand span { font-size: 1rem; font-weight: 600; color: var(--navy-900); letter-spacing: -0.02em; }
+
+.title    { font-family: var(--font-display); font-size: 2rem; color: var(--navy-950); margin-bottom: 6px; line-height: 1.15; }
+.subtitle { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 28px; }
+
+@media (max-width: 480px) {
+  .title { font-size: 1.7rem; }
+  .leftPanel { padding: 24px 16px; align-items: flex-start; padding-top: 40px; }
+}
+
+/* Form */
+.form { display: flex; flex-direction: column; gap: 14px; }
+.pwField { position: relative; }
+.eyeBtn {
+  position: absolute; right: 12px; bottom: 14px;
+  background: none; border: none; color: var(--slate-400);
+  cursor: pointer; padding: 2px; display: flex; min-height: auto;
+}
+.eyeBtn:hover { color: var(--slate-600); }
+.errorMsg { font-size: 0.82rem; color: var(--danger); background: #fff1f1; border: 1px solid #fecaca; border-radius: var(--radius-md); padding: 9px 12px; }
+
+/* Role picker */
+.roleRow { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.roleCard {
+  display: flex; flex-direction: column; align-items: center; gap: 5px;
+  padding: 16px 12px; border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg); background: var(--white);
+  cursor: pointer; transition: all var(--duration-fast); font-family: var(--font-body);
+  color: var(--slate-500); min-height: auto;
+}
+.roleCard strong { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); }
+.roleCard span   { font-size: 0.72rem; color: var(--text-muted); }
+.roleCard:hover  { border-color: var(--navy-500); background: var(--accent-light); }
+.roleCardActive  { border-color: var(--navy-700) !important; background: var(--accent-light) !important; color: var(--navy-700) !important; box-shadow: 0 0 0 3px rgba(22,48,88,0.08); }
+
+.switchLink { text-align: center; font-size: 0.875rem; color: var(--text-muted); }
+.switchLink a { color: var(--navy-700); font-weight: 500; }
+
+/* Right panel */
+.rightContent { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 36px; }
+
+.aiPill {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 14px; border-radius: var(--radius-full);
+  background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold-300); font-size: 0.78rem; font-weight: 500; width: fit-content;
+}
+
+.quote { border-left: 3px solid var(--gold-500); padding-left: 20px; }
+.quote p { font-family: var(--font-display); font-size: 1.2rem; color: rgba(255,255,255,0.85); line-height: 1.6; font-style: italic; margin-bottom: 12px; }
+.quote footer { font-size: 0.78rem; color: var(--gold-400); font-weight: 500; }
+
+.statsRow { display: flex; gap: 28px; }
+.stat { display: flex; flex-direction: column; gap: 3px; }
+.stat strong { font-size: 1.5rem; font-weight: 700; color: var(--white); font-family: var(--font-display); }
+.stat span   { font-size: 0.7rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.07em; }
+
+.bgOrbs { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.orb1 { position: absolute; top: -100px; right: -80px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(30,64,128,0.35) 0%, transparent 70%); }
+.orb2 { position: absolute; bottom: -80px; left: -60px; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%); }
+
+
+
+/* ══════════════════════════════════════════════════════
+   APPEND TO: frontend/src/pages/Auth.module.css
+   Adds styles for: forgot password, back link, dev notice, success screen
+   ══════════════════════════════════════════════════════ */
+
+.forgotRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -8px;
+}
+
+.forgotLink {
+  font-size: 0.8rem;
+  color: var(--navy-600);
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  min-height: unset;
+}
+.forgotLink:hover { color: var(--navy-800); }
+
+.backLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0 0;
+  width: 100%;
+  min-height: unset;
+  transition: color var(--duration-fast);
+}
+.backLink:hover { color: var(--text-secondary); }
+
+.devNotice {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #faeeda;
+  border: 1px solid #f0c070;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 0.78rem;
+  color: #854f0b;
+}
+
+.successScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.successIcon { color: var(--success); }
+
+.successScreen p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}

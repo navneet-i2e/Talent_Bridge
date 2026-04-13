@@ -1,0 +1,152 @@
+.page { display: flex; flex-direction: column; gap: 16px; }
+.pageHeader h1 { font-family: var(--font-display); font-size: 1.75rem; color: var(--navy-950); }
+.pageHeader p  { font-size: 0.875rem; color: var(--text-muted); margin-top: 4px; }
+@media (max-width: 480px) { .pageHeader h1 { font-size: 1.4rem; } }
+
+/* Search */
+.searchBar { display: flex; gap: 10px; align-items: center; }
+.searchField {
+  flex: 1; position: relative;
+  display: flex; align-items: center;
+  background: var(--white); border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg); overflow: hidden;
+  transition: border-color var(--duration-fast);
+  box-shadow: var(--shadow-sm);
+}
+.searchField:focus-within { border-color: var(--navy-600); box-shadow: 0 0 0 3px rgba(30,64,128,0.08); }
+.searchIcon { position: absolute; left: 14px; color: var(--slate-400); pointer-events: none; flex-shrink: 0; }
+.searchInput {
+  width: 100%; height: 48px; padding: 0 40px 0 46px;
+  border: none; background: transparent; font-size: 0.9375rem;
+  font-family: var(--font-body); color: var(--text-primary); outline: none;
+}
+.searchInput::placeholder { color: var(--slate-400); }
+.clearBtn {
+  position: absolute; right: 12px; background: var(--slate-100); border: none;
+  border-radius: 50%; width: 22px; height: 22px; min-height: 22px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--slate-500); transition: background var(--duration-fast);
+}
+.clearBtn:hover { background: var(--slate-200); }
+
+.filterToggle {
+  height: 48px; padding: 0 16px; display: flex; align-items: center; gap: 7px;
+  border: 1.5px solid var(--border-color); border-radius: var(--radius-lg);
+  background: var(--white); color: var(--text-secondary); font-size: 0.875rem;
+  font-weight: 500; cursor: pointer; font-family: var(--font-body);
+  box-shadow: var(--shadow-sm); transition: all var(--duration-fast); position: relative;
+  white-space: nowrap;
+}
+.filterToggle:hover { border-color: var(--navy-500); color: var(--navy-700); }
+.filterToggleActive { border-color: var(--navy-600); background: var(--accent-light); color: var(--navy-700); }
+.filterBadge {
+  position: absolute; top: 8px; right: 8px;
+  width: 7px; height: 7px; border-radius: 50%; background: var(--navy-600);
+}
+
+/* Filters panel */
+.filtersPanel { overflow: hidden; }
+.filtersInner {
+  background: var(--white); border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg); padding: 14px 16px;
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  box-shadow: var(--shadow-sm);
+}
+.filterField {
+  display: flex; align-items: center; gap: 8px;
+  border: 1.5px solid var(--border-color); border-radius: var(--radius-md);
+  padding: 0 12px; height: 40px; background: var(--white); color: var(--slate-400);
+  flex: 1; min-width: 140px;
+}
+.filterInput {
+  border: none; outline: none; width: 100%;
+  font-size: 0.875rem; font-family: var(--font-body); color: var(--text-primary);
+}
+.filterInput::placeholder { color: var(--slate-400); }
+.filterSelect {
+  height: 40px; padding: 0 30px 0 12px;
+  border: 1.5px solid var(--border-color); border-radius: var(--radius-md);
+  background: var(--white); font-size: 0.875rem; font-family: var(--font-body);
+  color: var(--text-primary); outline: none; cursor: pointer; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center;
+}
+.clearAllBtn {
+  padding: 0 14px; height: 40px; min-height: 40px; border: 1px solid var(--border-color);
+  border-radius: var(--radius-md); background: var(--white); color: var(--text-secondary);
+  font-size: 0.8125rem; font-family: var(--font-body); cursor: pointer;
+  transition: all var(--duration-fast); white-space: nowrap;
+}
+.clearAllBtn:hover { border-color: var(--danger); color: var(--danger); }
+
+/* Active filters */
+.activeFilters { display: flex; gap: 7px; flex-wrap: wrap; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; background: var(--accent-light);
+  border: 1px solid rgba(30,64,128,0.18); border-radius: var(--radius-full);
+  font-size: 0.78rem; font-weight: 500; color: var(--navy-700);
+}
+.chip button { display: flex; align-items: center; background: none; border: none; cursor: pointer; color: var(--navy-500); min-height: auto; width: auto; padding: 0; }
+.chip button:hover { color: var(--danger); }
+
+/* Grid */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px)  { .grid { grid-template-columns: 1fr; gap: 10px; } }
+
+/* Job card */
+.jobCard {
+  background: var(--white); border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg); padding: 16px;
+  display: flex; flex-direction: column; gap: 10px;
+  box-shadow: var(--shadow-sm); color: inherit; height: 100%;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+.jobCard:hover { border-color: var(--navy-500); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.cardTop { display: flex; align-items: center; justify-content: space-between; }
+.companyLogo {
+  width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--navy-600), var(--navy-800));
+  color: var(--white); font-weight: 700; font-size: 0.95rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.saveBtn {
+  width: 36px; height: 36px; min-height: 36px; border-radius: var(--radius-md);
+  border: 1px solid var(--border-color); background: var(--white);
+  color: var(--slate-400); display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all var(--duration-fast);
+}
+.saveBtn:hover { border-color: var(--navy-500); color: var(--navy-600); background: var(--accent-light); }
+.saveBtnActive { border-color: var(--navy-600) !important; color: var(--navy-700) !important; background: var(--accent-light) !important; }
+.jobTitle   { font-size: 0.9rem; font-weight: 600; color: var(--navy-900); line-height: 1.35; flex: 1; }
+.jobCompany { font-size: 0.78rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+.jobMeta    { font-size: 0.72rem; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 8px; }
+.jobMeta span { display: flex; align-items: center; gap: 3px; }
+.skillTags  { display: flex; flex-wrap: wrap; gap: 5px; }
+.cardFooter { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border-color); margin-top: auto; }
+.postedDate { font-size: 0.7rem; color: var(--text-muted); }
+
+/* Pagination */
+.pagination { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 0; flex-wrap: wrap; }
+.pageBtn {
+  display: flex; align-items: center; gap: 5px; padding: 0 14px; height: 40px; min-height: 40px;
+  border: 1px solid var(--border-color); border-radius: var(--radius-md);
+  background: var(--white); color: var(--text-secondary);
+  font-size: 0.875rem; font-family: var(--font-body); cursor: pointer;
+  transition: all var(--duration-fast);
+}
+.pageBtn:hover:not(:disabled) { border-color: var(--navy-500); color: var(--navy-700); }
+.pageBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+/* .pageBtnLabel { } */
+@media (max-width: 400px) { .pageBtnLabel { display: none; } }
+.pageNumbers { display: flex; gap: 4px; }
+.pageNum {
+  width: 36px; height: 36px; min-height: 36px; border-radius: var(--radius-md);
+  border: 1px solid var(--border-color); background: var(--white);
+  font-size: 0.875rem; font-family: var(--font-body); cursor: pointer; color: var(--text-secondary);
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--duration-fast);
+}
+.pageNum:hover { background: var(--slate-50); }
+.pageNumActive { background: var(--navy-800) !important; color: var(--white) !important; border-color: transparent; }

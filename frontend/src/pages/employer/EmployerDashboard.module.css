@@ -1,0 +1,73 @@
+.page { display: flex; flex-direction: column; gap: 28px; }
+
+.hero {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  background: linear-gradient(135deg, var(--navy-900), var(--navy-800));
+  border-radius: var(--radius-xl); padding: 28px 32px; color: var(--white);
+}
+.hero h1 { font-family: var(--font-display); font-size: 1.75rem; color: var(--white); margin-bottom: 6px; }
+.hero p  { font-size: 0.875rem; color: rgba(255,255,255,0.55); }
+
+.statsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 900px) { .statsGrid { grid-template-columns: repeat(2, 1fr); } }
+
+.statCard {
+  background: var(--white); border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg); padding: 20px;
+  display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow-sm);
+}
+.statIcon { width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.statVal { font-size: 1.6rem; font-weight: 700; font-family: var(--font-display); color: var(--navy-900); line-height: 1; }
+.statLbl { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+
+.twoCol { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 900px) { .twoCol { grid-template-columns: 1fr; } }
+
+.sectionHead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.sectionHead h2 { font-family: var(--font-display); font-size: 1.15rem; color: var(--navy-900); }
+.viewAll { display: flex; align-items: center; gap: 4px; font-size: 0.8rem; color: var(--navy-600); font-weight: 500; transition: gap var(--duration-fast); }
+.viewAll:hover { gap: 7px; }
+
+.jobRow {
+  background: var(--white); border: 1px solid var(--border-color);
+  border-radius: var(--radius-md); padding: 14px 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin-bottom: 8px; box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--duration-fast);
+}
+.jobRow:hover { box-shadow: var(--shadow-sm); }
+.jobRowTitle { font-size: 0.9rem; font-weight: 600; color: var(--navy-900); margin-bottom: 4px; }
+.jobRowMeta { font-size: 0.75rem; color: var(--text-muted); display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.jobRowMeta span { display: flex; align-items: center; gap: 4px; }
+.jobRowActions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.viewApplicants { display: flex; align-items: center; gap: 5px; font-size: 0.8rem; color: var(--navy-600); font-weight: 500; white-space: nowrap; }
+
+.aiActions { display: flex; flex-direction: column; gap: 8px; }
+.aiAction {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 14px; background: var(--white);
+  border: 1px solid var(--border-color); border-radius: var(--radius-md);
+  cursor: pointer; font-size: 0.875rem; font-weight: 500; color: var(--text-primary);
+  font-family: var(--font-body); text-align: left; box-shadow: var(--shadow-xs);
+  transition: all var(--duration-fast);
+}
+.aiAction:hover { border-color: var(--navy-500); background: var(--accent-light); color: var(--navy-700); }
+.aiArrow { margin-left: auto; color: var(--text-muted); opacity: 0; transition: opacity var(--duration-fast); }
+.aiAction:hover .aiArrow { opacity: 1; }
+
+.appTable { display: flex; flex-direction: column; gap: 8px; }
+.appRow {
+  background: var(--white); border: 1px solid var(--border-color);
+  border-radius: var(--radius-md); padding: 12px 16px;
+  display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow-xs);
+}
+.applicantAvatar {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--navy-600), var(--navy-800));
+  color: var(--white); font-weight: 700; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.applicantInfo { flex: 1; min-width: 0; }
+.applicantName { font-size: 0.875rem; font-weight: 600; color: var(--navy-900); }
+.applicantJob  { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.reviewLink { display: flex; align-items: center; gap: 5px; font-size: 0.8rem; color: var(--navy-600); font-weight: 500; white-space: nowrap; }

@@ -1,0 +1,107 @@
+/* frontend/src/pages/employer/KanbanPipeline.module.css */
+
+.loading { padding: 48px; text-align: center; color: var(--text-muted); }
+
+.page { padding: 24px; height: 100%; display: flex; flex-direction: column; gap: 20px; }
+
+.pageHeader { display: flex; align-items: flex-start; gap: 16px; }
+.backBtn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: 10px;
+  border: 1px solid var(--border-color); background: var(--white);
+  color: var(--text-secondary); font-size: 0.8rem; cursor: pointer;
+  transition: all var(--duration-fast); min-height: unset; white-space: nowrap;
+}
+.backBtn:hover { border-color: var(--navy-500); color: var(--navy-700); }
+.pageTitle { font-family: var(--font-display); font-size: 1.5rem; color: var(--navy-900); }
+.pageSub   { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+
+/* Board */
+.board {
+  display: flex; gap: 12px;
+  overflow-x: auto; flex: 1;
+  padding-bottom: 16px;
+  align-items: flex-start;
+}
+.board::-webkit-scrollbar { height: 6px; }
+.board::-webkit-scrollbar-thumb { background: var(--slate-200); border-radius: 999px; }
+
+/* Column */
+.column {
+  flex: 0 0 220px;
+  background: var(--slate-50);
+  border: 2px dashed transparent;
+  border-radius: 14px;
+  padding: 12px;
+  transition: border-color var(--duration-fast), background var(--duration-fast);
+  min-height: 300px;
+}
+.columnOver {
+  border-color: var(--navy-500);
+  background: var(--accent-light);
+}
+
+.colHeader {
+  display: flex; align-items: center; gap: 7px;
+  margin-bottom: 10px; padding: 0 2px;
+}
+.colDot   { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.colLabel { font-size: 0.8rem; font-weight: 600; color: var(--text-primary); flex: 1; }
+.colCount {
+  font-size: 0.72rem; font-weight: 600;
+  background: var(--slate-200); color: var(--text-secondary);
+  padding: 1px 7px; border-radius: 20px;
+}
+
+/* Cards stack */
+.cards { display: flex; flex-direction: column; gap: 8px; }
+
+.emptyCol {
+  border: 2px dashed var(--border-color);
+  border-radius: 10px; padding: 24px 12px;
+  text-align: center; color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+/* Card */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px; padding: 12px;
+  cursor: grab; transition: box-shadow var(--duration-fast);
+  box-shadow: var(--shadow-xs);
+}
+.card:active   { cursor: grabbing; }
+.cardDragging  { opacity: 0.5; }
+
+.cardTop  { display: flex; gap: 9px; margin-bottom: 8px; }
+.cardAvatar {
+  width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0;
+  background: var(--accent-light); color: var(--navy-700);
+  display: flex; align-items: center; justify-content: center;
+}
+.cardInfo  { flex: 1; min-width: 0; }
+.cardName  {
+  font-size: 0.8125rem; font-weight: 500; color: var(--text-primary);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.cardSub   {
+  font-size: 0.72rem; color: var(--text-muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  margin-top: 1px;
+}
+
+.cardMeta  { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.cardTime  { display: flex; align-items: center; gap: 3px; font-size: 0.68rem; color: var(--text-muted); }
+.resumeLink {
+  display: flex; align-items: center; gap: 3px;
+  font-size: 0.68rem; color: var(--navy-600); font-weight: 500;
+  text-decoration: none;
+}
+.resumeLink:hover { text-decoration: underline; }
+
+.cardCover {
+  font-size: 0.72rem; color: var(--text-secondary);
+  line-height: 1.45; border-top: 1px solid var(--border-color);
+  padding-top: 7px; margin-top: 2px;
+}

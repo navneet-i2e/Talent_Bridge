@@ -1,0 +1,28 @@
+{
+  "name": "talentbridge-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.0",
+    "@reduxjs/toolkit": "^2.2.6",
+    "react-redux": "^9.1.2",
+    "framer-motion": "^11.3.2",
+    "axios": "^1.7.2",
+    "react-hot-toast": "^2.4.1",
+    "react-markdown": "^9.0.1",
+    "lucide-react": "^0.400.0",
+    "date-fns": "^3.6.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.3.4"
+  }
+}

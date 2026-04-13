@@ -1,0 +1,28 @@
+/* frontend/src/components/ui/Pagination.module.css */
+
+.wrap {
+  display: flex; align-items: center; justify-content: center;
+  gap: 4px; padding: 20px 0 8px;
+}
+
+.btn {
+  min-width: 34px; height: 34px; border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--white); color: var(--text-secondary);
+  font-size: 0.8rem; font-weight: 500;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all var(--duration-fast);
+  padding: 0 8px; min-height: unset;
+}
+.btn:hover:not(:disabled) {
+  border-color: var(--navy-500); color: var(--navy-700);
+  background: var(--accent-light);
+}
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btnActive {
+  background: var(--navy-700) !important;
+  color: var(--white) !important;
+  border-color: var(--navy-700) !important;
+}
+
+.gap { color: var(--text-muted); font-size: 0.8rem; padding: 0 2px; }

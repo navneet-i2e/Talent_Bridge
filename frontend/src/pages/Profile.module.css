@@ -1,0 +1,116 @@
+/* Setup page */
+.setupPage {
+  min-height: 100vh;
+  background: var(--bg-secondary);
+  display: flex; align-items: center; justify-content: center;
+  padding: 40px 24px;
+}
+.setupCard {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  width: 100%; max-width: 620px;
+  box-shadow: var(--shadow-lg);
+}
+.setupHeader { text-align: center; margin-bottom: 32px; }
+.setupIcon {
+  width: 64px; height: 64px; border-radius: 18px;
+  background: linear-gradient(135deg, var(--navy-700), var(--navy-900));
+  color: var(--gold-300);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+  box-shadow: var(--shadow-md);
+}
+.setupHeader h1 { font-family: var(--font-display); font-size: 1.6rem; color: var(--navy-950); margin-bottom: 8px; }
+.setupHeader p  { font-size: 0.9rem; color: var(--text-muted); }
+
+/* Edit page */
+.editPage { display: flex; flex-direction: column; gap: 20px; }
+.editHeader h1 { font-family: var(--font-display); font-size: 1.75rem; color: var(--navy-950); }
+.editHeader p  { font-size: 0.875rem; color: var(--text-muted); margin-top: 4px; }
+.editCard {
+  background: var(--white); border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl); padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Form */
+.form { display: flex; flex-direction: column; gap: 18px; }
+.formGrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 600px) { .formGrid2 { grid-template-columns: 1fr; } }
+
+/* Skills */
+.field { display: flex; flex-direction: column; gap: 8px; }
+.fieldLabel { font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); }
+
+.skillTags { display: flex; flex-wrap: wrap; gap: 6px; min-height: 28px; }
+.skillTag {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 10px;
+  background: var(--accent-light);
+  border: 1px solid rgba(30,64,128,0.18);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem; font-weight: 500; color: var(--navy-700);
+}
+.skillTag button {
+  display: flex; align-items: center;
+  background: none; border: none; cursor: pointer;
+  color: var(--navy-500); padding: 0;
+  transition: color var(--duration-fast);
+}
+.skillTag button:hover { color: var(--danger); }
+
+.skillSearch { position: relative; }
+.skillInput {
+  width: 100%; height: 40px; padding: 0 14px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem; font-family: var(--font-body);
+  outline: none; transition: border-color var(--duration-fast);
+}
+.skillInput:focus { border-color: var(--navy-600); }
+.skillInput::placeholder { color: var(--slate-400); }
+
+.skillDropdown {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  z-index: 50; overflow: hidden;
+  max-height: 200px; overflow-y: auto;
+}
+.skillOption {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; padding: 9px 14px;
+  background: none; border: none; cursor: pointer;
+  font-size: 0.8125rem; font-family: var(--font-body);
+  color: var(--text-primary); text-align: left;
+  transition: background var(--duration-fast);
+  border-bottom: 1px solid var(--border-color);
+}
+.skillOption:hover { background: var(--accent-light); color: var(--navy-700); }
+.skillOption:last-child { border-bottom: none; }
+
+/* Upload */
+.uploadArea {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px;
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer; color: var(--text-muted);
+  font-size: 0.875rem;
+  transition: all var(--duration-fast);
+}
+.uploadArea:hover { border-color: var(--navy-500); color: var(--navy-600); background: var(--accent-light); }
+.existingFile { font-size: 0.78rem; color: var(--success); }
+
+/* Checkbox */
+.checkRow {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.875rem; color: var(--text-secondary); cursor: pointer;
+}
+.checkRow input { width: 16px; height: 16px; cursor: pointer; accent-color: var(--navy-700); }
+
+.loadingCenter { display: flex; justify-content: center; align-items: center; min-height: 300px; }

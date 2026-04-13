@@ -1,0 +1,96 @@
+/* frontend/src/components/ui/NotificationBell.module.css */
+
+.wrap { position: relative; }
+
+.bell {
+  position: relative;
+  width: 36px; height: 36px; border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--white);
+  color: var(--text-secondary);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all var(--duration-fast);
+  min-height: unset;
+}
+.bell:hover { background: var(--slate-50); color: var(--navy-700); border-color: var(--border-strong); }
+
+.badge {
+  position: absolute; top: -4px; right: -4px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--danger); color: #fff;
+  font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid var(--white);
+}
+
+/* Panel */
+.panel {
+  position: absolute; top: calc(100% + 8px); right: 0;
+  width: 340px;
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: var(--shadow-xl);
+  z-index: 500;
+  overflow: hidden;
+}
+
+.header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+.headerTitle { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); }
+.headerActions { display: flex; align-items: center; gap: 6px; }
+.markAllBtn {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 0.72rem; color: var(--navy-600); font-weight: 500;
+  background: none; border: none; cursor: pointer; padding: 3px 6px;
+  border-radius: 5px; transition: background var(--duration-fast);
+  min-height: unset;
+}
+.markAllBtn:hover { background: var(--accent-light); }
+.closeBtn {
+  width: 24px; height: 24px; border-radius: 6px;
+  border: none; background: none; color: var(--text-muted);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; min-height: unset;
+}
+.closeBtn:hover { background: var(--slate-100); }
+
+/* List */
+.list { max-height: 380px; overflow-y: auto; }
+.empty {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 40px 20px; color: var(--text-muted); font-size: 0.8rem; text-align: center;
+}
+
+.item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer; transition: background var(--duration-fast);
+  position: relative;
+}
+.item:last-child { border-bottom: none; }
+.itemUnread { background: #fafbff; }
+
+.iconWrap {
+  width: 32px; height: 32px; border-radius: 9px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 2px;
+}
+.icon--application_received { background: var(--employer-light, #E6F1FB); color: var(--employer, #185FA5); }
+.icon--status_changed        { background: #E1F5EE; color: #0F6E56; }
+.icon--new_job_match         { background: #FAEEDA; color: #854F0B; }
+
+.content { flex: 1; min-width: 0; }
+.title   { font-size: 0.8125rem; font-weight: 500; color: var(--text-primary); margin-bottom: 2px; }
+.message { font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 4px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.time    { font-size: 0.68rem; color: var(--text-muted); }
+
+.dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--navy-600); flex-shrink: 0; margin-top: 4px;
+}
